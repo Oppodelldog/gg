@@ -898,6 +898,13 @@ func (dc *Context) InvertY() {
 	dc.Scale(1, -1)
 }
 
+// InvertX flips the X axis so that X grows from right to left and X=0 is at
+// the right of the image.
+func (dc *Context) InvertX() {
+	dc.Translate(0, float64(dc.width))
+	dc.Scale(-1, 1)
+}
+
 // Stack
 
 // Push saves the current state of the context for later retrieval. These
